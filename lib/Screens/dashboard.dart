@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:share_plus/share_plus.dart';
 import '../Models/post.dart';
+import 'package:get/get.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -46,6 +47,8 @@ class _DashboardState extends State<Dashboard> {
     ),
   ];
   final List<String> comments = [];
+  final searchController = TextEditingController();
+  String searchQuery = '';
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +93,15 @@ class _DashboardState extends State<Dashboard> {
           ],
         ),
         actions: [
-          IconButton(icon: const Icon(Icons.person_outline), color: Colors.white, onPressed: () {}),
-          IconButton(icon: const Icon(Icons.notifications_none), color: Colors.white, onPressed: () {}),
-          IconButton(icon: const Icon(Icons.chat_bubble_outline), color: Colors.white, onPressed: () {}),
+          IconButton(icon: const Icon(Icons.person_outline), color: Colors.white, onPressed: () {
+            Get.offAllNamed('/profile');
+          }),
+          IconButton(icon: const Icon(Icons.notifications_none), color: Colors.white, onPressed: () {
+
+          }),
+          IconButton(icon: const Icon(Icons.chat_bubble_outline), color: Colors.white, onPressed: () {
+            Get.offAllNamed('/chats');
+          }),
           const SizedBox(width: 8),
         ],
       ),
@@ -116,12 +125,18 @@ class _DashboardState extends State<Dashboard> {
                       const SizedBox(width: 8),
                       Expanded(
                         child: TextField(
+                          controller: searchController,
                           style: GoogleFonts.poppins(fontSize: 16),
                           decoration: const InputDecoration(
                             hintText: 'Search',
                             border: InputBorder.none,
                             isDense: true,
                           ),
+                          onChanged: (value){
+                            setState(() {
+                              searchQuery = value;
+                            });
+                          },
                         ), //TODO: add search functionality
                       ),
                     ],
@@ -147,7 +162,7 @@ class _DashboardState extends State<Dashboard> {
           const SizedBox(height: 24),
 
           // Posts
-          ...posts.map((post) => _buildPostTile(post)),
+          ..._filterPosts.map((post) => _buildPostTile(post)),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -161,6 +176,16 @@ class _DashboardState extends State<Dashboard> {
         ],
       ),
     );
+  }
+
+  List<Post> get _filterPosts{
+    if(searchQuery.isEmpty)
+      return posts;
+    return posts.where((post) =>
+        post.author.toLowerCase().contains(searchQuery.toLowerCase()) ||
+        post.role.toLowerCase().contains(searchQuery.toLowerCase()) ||
+        post.content.toLowerCase().contains(searchQuery.toLowerCase())
+    ).toList();
   }
 
   Widget _buildPostTile(Post post) {

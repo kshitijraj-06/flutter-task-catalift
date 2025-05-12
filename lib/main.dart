@@ -1,4 +1,7 @@
+import 'package:catalift_task/Screens/Chats/chats_list.dart';
 import 'package:catalift_task/Screens/dashboard.dart';
+import 'package:catalift_task/Screens/landing_page.dart';
+import 'package:catalift_task/Screens/profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,7 +24,7 @@ class TaskApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute:'/login',
+      initialRoute:'/landing',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
@@ -32,6 +35,12 @@ class TaskApp extends StatelessWidget{
         GetPage(name: '/login', page: ()=> LoginPage()
         ),
         GetPage(name: '/home', page: () => Dashboard()
+        ),
+        GetPage(name: '/profile', page: () => ProfilePage()
+        ),
+        GetPage(name: '/chats', page: ()=> ChatListScreen()
+        ),
+        GetPage(name: '/landing', page: () => CataLiftLandingPage()
         )
       ],
     );
