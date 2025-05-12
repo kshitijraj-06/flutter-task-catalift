@@ -30,7 +30,7 @@ All screenshots, the latest APK, and a screen recording are available in this Dr
 ## 🛠 Getting Started
 
 1. **Clone the repository:**
-git clone https://github.com/kshitijraj-06/flutter-task-catalift.git
+git clone https://github.com/kshitijraj-06/flutter-task-catalift.git\n
 cd flutter-task-catalift
 
 
@@ -53,7 +53,6 @@ flutter run
 ## 🙏 Acknowledgements
 
 - Built with [Flutter](https://flutter.dev/)
-- Inspired by the vision of Manipal alumni
 
 ---
 
