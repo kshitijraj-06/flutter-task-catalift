@@ -116,7 +116,7 @@ class _DashboardState extends State<Dashboard> {
                       const SizedBox(width: 8),
                       Expanded(
                         child: TextField(
-                          style: GoogleFonts.poppins(fontSize: 15),
+                          style: GoogleFonts.poppins(fontSize: 16),
                           decoration: const InputDecoration(
                             hintText: 'Search',
                             border: InputBorder.none,
