@@ -201,7 +201,6 @@ class _DashboardState extends State<Dashboard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -228,11 +227,9 @@ class _DashboardState extends State<Dashboard> {
 
             const SizedBox(height: 14),
 
-            // Content
             Text(post.content, style: GoogleFonts.poppins(fontSize: 15)),
             const SizedBox(height: 14),
 
-            // Image
             ClipRRect(
               borderRadius: BorderRadius.circular(14),
               child: Image.network(
@@ -244,7 +241,6 @@ class _DashboardState extends State<Dashboard> {
             ),
             const SizedBox(height: 14),
 
-            // Stats Row
             Row(
               children: [
                 Icon(Icons.star, color: Colors.amber.shade600),
@@ -256,7 +252,6 @@ class _DashboardState extends State<Dashboard> {
             ),
             const SizedBox(height: 6),
 
-            // Action Buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

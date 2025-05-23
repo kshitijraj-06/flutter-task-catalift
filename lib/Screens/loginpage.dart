@@ -117,7 +117,6 @@ class _LoginPageState extends State<LoginPage> {
                     'LOG IN',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'MS-Bold',
                       color: Colors.black,
                     ),
                   ),

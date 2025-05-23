@@ -14,46 +14,10 @@ class CataLiftLandingPage extends StatelessWidget {
       backgroundColor: const Color(0xFF0A125A),
       body: Stack(
         children: [
-          // Subtle animated background shapes
-          Positioned(
-            top: -100,
-            left: -80,
-            child: AnimatedContainer(
-              duration: Duration(seconds: 2),
-              curve: Curves.easeInOut,
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [Colors.blue.shade900.withValues(alpha: 0.3), Colors.transparent],
-                ),
-              ),
-            ).animate().fadeIn(duration: Duration(seconds: 1)),
-          ),
-          Positioned(
-            bottom: -80,
-            right: -60,
-            child: AnimatedContainer(
-              duration: Duration(seconds: 2),
-              curve: Curves.easeInOut,
-              width: 180,
-              height: 180,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [Colors.amber.shade400.withValues(alpha: 0.25), Colors.transparent],
-                ),
-              ),
-            ).animate().fadeIn(duration: Duration(milliseconds: 1200), delay: Duration(milliseconds: 200)),
-          ),
-
-          // Main content
           Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // Animated Logo/Title
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -98,7 +62,7 @@ class CataLiftLandingPage extends StatelessWidget {
 
                 const SizedBox(height: 32),
 
-                // Animated Hero Headline
+
                 Text(
                   'Empowering Learners. Elevating Futures.',
                   textAlign: TextAlign.center,
@@ -114,7 +78,7 @@ class CataLiftLandingPage extends StatelessWidget {
 
                 const SizedBox(height: 18),
 
-                // Animated Subtitle
+
                 Text(
                   'Join CataLift and unlock a world of mentorship, resources, and growth.',
                   textAlign: TextAlign.center,
@@ -128,7 +92,7 @@ class CataLiftLandingPage extends StatelessWidget {
 
                 const SizedBox(height: 42),
 
-                // Animated Hero Illustration (replace with your own asset/network image)
+
                 ClipRRect(
                   borderRadius: BorderRadius.circular(14),
                   child: Image.network(
@@ -142,7 +106,7 @@ class CataLiftLandingPage extends StatelessWidget {
 
                 const SizedBox(height: 36),
 
-                // Animated Call-to-Action Button
+
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.amber.shade400,

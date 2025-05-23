@@ -4,17 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class AuthService extends GetxController {
-  // controllers for the text fields
   final email    = TextEditingController();
   final password = TextEditingController();
 
-  // loading & obscure‐toggle flags
   final isLoading       = false.obs;
   final obscurePassword = true.obs;
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // toggle password visibility
   void toggleObscure() => obscurePassword.value = !obscurePassword.value;
 
   Future<void> signIn() async {

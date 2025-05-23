@@ -60,7 +60,7 @@ class _ProfilePageState extends State<ProfilePage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.settings, color: Colors.white),
-            onPressed: () {}, // Add settings action
+            onPressed: () {},
             tooltip: 'Settings',
           ),
         ],
@@ -70,7 +70,6 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 24.0),
           child: Column(
             children: [
-              // Avatar with edit overlay
               Stack(
                 alignment: Alignment.bottomRight,
                 children: [
@@ -85,7 +84,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(24),
                       onTap: () {
-                        // Add edit avatar action
+
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(12.0),
@@ -97,7 +96,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               const SizedBox(height: 24),
 
-              // Name
               Text(
                 'Kshitij Ranjan',
                 style: GoogleFonts.poppins(
@@ -108,7 +106,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               const SizedBox(height: 8),
 
-              // Email
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -125,7 +122,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               const SizedBox(height: 8),
 
-              // Designation
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -142,10 +138,8 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               const SizedBox(height: 24),
 
-              // Divider
               Divider(thickness: 1.2, color: Colors.grey[300]),
 
-              // Profile Actions
               Column(
                 children: [
                   ListTile(
